@@ -614,3 +614,152 @@ h2 {
   opacity: 1;
   transform: translate(-50%,0);
   }
+
+/* MEDBI FOOTBALL — DESIGN UPDATE */
+
+:root {
+  --bg: #060a10;
+  --panel: #101a27;
+  --panel2: #19283a;
+  --line: #26394e;
+  --green: #29e69b;
+  --green2: #13b979;
+  --radius: 24px;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 90% 0%, #123b35 0%, transparent 35%),
+    radial-gradient(ellipse at 0% 35%, #12263c 0%, transparent 35%),
+    var(--bg);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 8;
+  background: #080e17eF;
+  backdrop-filter: blur(18px);
+}
+
+.welcome-row {
+  min-height: 190px;
+  border: 1px solid #2c6657;
+  background:
+    radial-gradient(circle at 85% 50%, #25e39a28, transparent 35%),
+    linear-gradient(120deg, #173c39, #102337 70%, #0b1724);
+}
+
+.hero-ball {
+  width: 94px;
+  height: 94px;
+  flex-basis: 94px;
+  box-shadow: 0 0 35px #25e39a30, inset -7px -9px 15px #172a35;
+}
+
+.hero-ball span {
+  font-size: 49px;
+}
+
+.filter-tab {
+  padding: 12px 17px;
+  transition: .2s ease;
+}
+
+.filter-tab.active {
+  box-shadow: 0 0 22px #25e39a35;
+}
+
+.match-card {
+  border-radius: 23px;
+  background:
+    radial-gradient(circle at 100% 0%, #1b3a4a55, transparent 45%),
+    linear-gradient(145deg, #152437, #0d1723);
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.match-card:active {
+  transform: scale(.985);
+  border-color: var(--green);
+}
+
+.team-logo {
+  width: 42px;
+  height: 42px;
+  flex-basis: 42px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #263f53, #152638);
+}
+
+.score {
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.competition-chip,
+.league-card {
+  border-radius: 21px;
+  transition: .2s ease;
+}
+
+.competition-chip:active,
+.league-card:active {
+  transform: scale(.97);
+  border-color: var(--green);
+}
+
+.competition-ball {
+  width: 42px;
+  height: 42px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #254a51, #172c3c);
+}
+
+.league-card {
+  min-height: 145px;
+  background:
+    radial-gradient(circle at 90% 15%, #25e39a20, transparent 38%),
+    linear-gradient(145deg, #182b3e, #0e1925);
+}
+
+.bottom-nav {
+  background: #080e17f5;
+  border-top: 1px solid #294052;
+  box-shadow: 0 -8px 30px #0004;
+}
+
+.nav-item span {
+  font-size: 23px;
+}
+
+.nav-item.active {
+  color: var(--green);
+}
+
+.icon-button {
+  border-radius: 16px;
+  background: linear-gradient(145deg, #19283a, #0c1723);
+}
+
+.section-block {
+  margin-bottom: 34px;
+}
+
+.empty-card,
+.loading-card {
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 50% 0%, #1b3b4d66, transparent 60%),
+    #101b29;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
