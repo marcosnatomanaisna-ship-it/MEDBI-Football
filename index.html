@@ -1,173 +1,621 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#080d14">
+
   <meta name="description" content="MEDBI Football — a plataforma do futebol da Guiné-Bissau e dos jogadores guineenses pelo mundo.">
+
   <title>MEDBI Football | Futebol Guineense</title>
+
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
+
 <div class="app-shell">
+
+  <!-- CABEÇALHO -->
   <header class="topbar">
-    <a class="brand" href="#" data-go="home" aria-label="MEDBI Football início">
-      <span class="brand-mark">M<span>F</span></span>
-      <span class="brand-copy"><strong>MEDBI</strong><small>FOOTBALL</small></span>
-    </a>
-    <div class="top-actions">
-      <span class="connection" id="connectionStatus"><i></i> Plataforma</span>
-      <button class="icon-button" id="searchToggle" aria-label="Pesquisar">⌕</button>
+
+    <div class="top-left">
+
+      <button
+        class="icon-button"
+        id="menuToggle"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        type="button">
+        ☰
+      </button>
+
+      <button
+        class="icon-button hidden"
+        id="backButton"
+        aria-label="Voltar atrás"
+        type="button">
+        ←
+      </button>
+
+      <a class="brand" href="#" data-go="home" aria-label="MEDBI Football início">
+        <span class="brand-mark">M<span>F</span></span>
+
+        <span class="brand-copy">
+          <strong>MEDBI</strong>
+          <small>FOOTBALL</small>
+        </span>
+      </a>
+
     </div>
+
+    <div class="top-actions">
+
+      <span class="connection" id="connectionStatus">
+        <i></i> Plataforma
+      </span>
+
+      <button
+        class="icon-button"
+        id="searchToggle"
+        aria-label="Pesquisar"
+        type="button">
+        ⌕
+      </button>
+
+    </div>
+
   </header>
 
+
+  <!-- SOBREPOSIÇÃO DO MENU -->
+  <div
+    id="menuOverlay"
+    class="menu-overlay hidden">
+  </div>
+
+
+  <!-- MENU LATERAL -->
+  <aside
+    id="sideMenu"
+    class="side-menu"
+    aria-label="Menu principal">
+
+    <div class="menu-header">
+
+      <div class="brand-mark">M<span>F</span></div>
+
+      <div>
+        <strong>MEDBI FOOTBALL</strong>
+        <small>Futebol guineense</small>
+      </div>
+
+      <button
+        id="menuClose"
+        class="icon-button"
+        aria-label="Fechar menu"
+        type="button">
+        ✕
+      </button>
+
+    </div>
+
+
+    <div class="menu-country">
+
+      🇬🇼
+
+      <div>
+        <strong>O futebol é nosso</strong>
+        <small>Guiné-Bissau</small>
+      </div>
+
+    </div>
+
+
+    <nav class="side-menu-links" aria-label="Secções">
+
+      <button type="button" data-page="home">
+        ⌂ <span>Início</span>
+      </button>
+
+      <button type="button" data-page="players">
+        👤 <span>Jogadores</span>
+      </button>
+
+      <button type="button" data-page="djurtus">
+        🇬🇼 <span>Djurtus</span>
+      </button>
+
+      <button type="button" data-page="clubs">
+        🛡️ <span>Clubes</span>
+      </button>
+
+      <button type="button" data-page="competitions">
+        🏆 <span>Competições</span>
+      </button>
+
+      <button type="button" data-page="news">
+        📰 <span>Notícias</span>
+      </button>
+
+      <div class="menu-divider"></div>
+
+      <button type="button" data-page="about">
+        ℹ️ <span>Sobre o MEDBI</span>
+      </button>
+
+    </nav>
+
+
+    <div class="menu-footer">
+      <strong>MEDBI</strong>
+      <small>Uma casa para o futebol guineense.</small>
+    </div>
+
+  </aside>
+
+
+  <!-- PESQUISA GLOBAL -->
+  <section class="search-panel hidden" id="searchPanel">
+
+    <input
+      id="searchInput"
+      type="search"
+      placeholder="Pesquisar jogadores, clubes ou notícias..."
+      autocomplete="off">
+
+  </section>
+
+
+  <!-- PÁGINA INICIAL -->
   <main id="mainContent">
-    <section class="search-panel hidden" id="searchPanel">
-      <input id="searchInput" type="search" placeholder="Pesquisar jogadores, clubes ou notícias..." autocomplete="off">
-    </section>
 
     <section class="welcome-row">
+
       <div>
         <p class="eyebrow">O FUTEBOL É NOSSO</p>
+
         <h1>Futebol <span>guineense.</span></h1>
-        <p class="muted">A nossa paixão. Os nossos jogadores. A nossa história.</p>
+
+        <p class="muted">
+          A nossa paixão. Os nossos jogadores. A nossa história.
+        </p>
       </div>
-      <div class="hero-ball" aria-hidden="true"><span>⚽</span><small>🇬🇼</small></div>
+
+      <div class="hero-ball" aria-hidden="true">
+        <span>⚽</span>
+        <small>🇬🇼</small>
+      </div>
+
     </section>
 
+
+    <!-- APRESENTAÇÃO -->
     <section class="section-block">
+
       <div class="section-heading">
-        <div><p class="eyebrow">MEDBI FOOTBALL</p><h2>Bem-vindo!</h2></div>
+        <div>
+          <p class="eyebrow">MEDBI FOOTBALL</p>
+          <h2>Bem-vindo!</h2>
+        </div>
       </div>
+
       <div class="favorite-box">
+
         <span>🇬🇼</span>
+
         <h3>O futebol da Guiné-Bissau tem uma casa.</h3>
-        <p>Descobre os nossos talentos, acompanha os clubes nacionais, conhece os Djurtus e segue os jogadores guineenses pelo mundo.</p>
+
+        <p>
+          Descobre os nossos talentos, acompanha os clubes nacionais,
+          conhece os Djurtus e segue os jogadores guineenses pelo mundo.
+        </p>
+
       </div>
+
     </section>
 
+
+    <!-- EXPLORAR -->
     <section class="section-block">
+
       <div class="section-heading">
-        <div><p class="eyebrow">DESCOBRE</p><h2>Explora o futebol guineense</h2></div>
+        <div>
+          <p class="eyebrow">DESCOBRE</p>
+          <h2>Explora o futebol guineense</h2>
+        </div>
       </div>
+
       <div class="competition-strip">
-        <button class="competition-chip" data-go="players"><span>👤</span><span>Jogadores</span></button>
-        <button class="competition-chip" data-go="djurtus"><span>🇬🇼</span><span>Djurtus</span></button>
-        <button class="competition-chip" data-go="clubs"><span>🛡️</span><span>Clubes</span></button>
-        <button class="competition-chip" data-go="competitions"><span>🏆</span><span>Competições</span></button>
+
+        <button class="competition-chip" data-go="players" type="button">
+          <span>👤</span>
+          <span>Jogadores</span>
+        </button>
+
+        <button class="competition-chip" data-go="djurtus" type="button">
+          <span>🇬🇼</span>
+          <span>Djurtus</span>
+        </button>
+
+        <button class="competition-chip" data-go="clubs" type="button">
+          <span>🛡️</span>
+          <span>Clubes</span>
+        </button>
+
+        <button class="competition-chip" data-go="competitions" type="button">
+          <span>🏆</span>
+          <span>Competições</span>
+        </button>
+
       </div>
+
     </section>
 
+
+    <!-- JOGADORES EM DESTAQUE -->
     <section class="section-block">
+
       <div class="section-heading">
-        <div><p class="eyebrow">TALENTO NACIONAL</p><h2>Jogadores em destaque</h2></div>
-        <button class="text-button" data-go="players">Ver todos</button>
+
+        <div>
+          <p class="eyebrow">TALENTO NACIONAL</p>
+          <h2>Jogadores em destaque</h2>
+        </div>
+
+        <button class="text-button" data-go="players" type="button">
+          Ver todos
+        </button>
+
       </div>
+
       <div id="homePlayers" class="players-grid">
-        <div class="loading-card"><span class="spinner"></span><p>Jogadores em breve...</p></div>
+
+        <div class="loading-card">
+          <span class="spinner"></span>
+          <p>Jogadores em breve...</p>
+        </div>
+
       </div>
+
     </section>
 
+
+    <!-- NOTÍCIAS EM DESTAQUE -->
     <section class="section-block">
+
       <div class="section-heading">
-        <div><p class="eyebrow">ATUALIDADE</p><h2>Últimas notícias</h2></div>
-        <button class="text-button" data-go="news">Ver todas</button>
+
+        <div>
+          <p class="eyebrow">ATUALIDADE</p>
+          <h2>Últimas notícias</h2>
+        </div>
+
+        <button class="text-button" data-go="news" type="button">
+          Ver todas
+        </button>
+
       </div>
+
       <div id="homeNews" class="news-list">
-        <div class="favorite-box"><span>📰</span><h3>Notícias do futebol guineense</h3><p>Esta área será atualizada com informações verificadas.</p></div>
+
+        <div class="favorite-box">
+          <span>📰</span>
+          <h3>Notícias do futebol guineense</h3>
+          <p>
+            Esta área será atualizada com informações verificadas.
+          </p>
+        </div>
+
       </div>
+
     </section>
+
   </main>
 
+
+  <!-- PÁGINA DOS JOGADORES -->
   <section id="page-players" class="page-view hidden">
+
     <div class="page-heading">
+
       <p class="eyebrow">TALENTO GUINEENSE</p>
+
       <h1>Jogadores <span>🇬🇼</span></h1>
-      <p class="muted">Jogadores guineenses que atuam dentro e fora do país.</p>
+
+      <p class="muted">
+        Jogadores guineenses que atuam dentro e fora do país.
+      </p>
+
     </div>
+
+
     <div class="players-search">
-      <input type="search" id="playerSearch" placeholder="Pesquisar jogador ou clube..." autocomplete="off">
+
+      <input
+        type="search"
+        id="playerSearch"
+        placeholder="Pesquisar jogador ou clube..."
+        autocomplete="off">
+
       <select id="positionFilter">
+
         <option value="all">Todas as posições</option>
         <option value="Guarda-redes">Guarda-redes</option>
         <option value="Defesa">Defesas</option>
         <option value="Médio">Médios</option>
         <option value="Avançado">Avançados</option>
+
       </select>
+
     </div>
+
+
     <div class="filter-tabs player-tabs">
-      <button class="filter-tab active" data-player-filter="all">Todos</button>
-      <button class="filter-tab" data-player-filter="national">Na Guiné-Bissau</button>
-      <button class="filter-tab" data-player-filter="abroad">No estrangeiro</button>
+
+      <button class="filter-tab active" data-player-filter="all" type="button">
+        Todos
+      </button>
+
+      <button class="filter-tab" data-player-filter="national" type="button">
+        Na Guiné-Bissau
+      </button>
+
+      <button class="filter-tab" data-player-filter="abroad" type="button">
+        No estrangeiro
+      </button>
+
     </div>
-    <p class="data-note" id="playersCount">Jogadores guineenses</p>
+
+
+    <p class="data-note" id="playersCount">
+      Jogadores guineenses
+    </p>
+
     <div id="playersList" class="players-grid"></div>
+
   </section>
 
+
+  <!-- PÁGINA DOS DJURTUS -->
   <section id="page-djurtus" class="page-view hidden">
+
     <div class="page-heading">
+
       <p class="eyebrow">SELEÇÃO NACIONAL</p>
+
       <h1>Os <span>Djurtus</span> 🇬🇼</h1>
-      <p class="muted">A seleção nacional da Guiné-Bissau.</p>
+
+      <p class="muted">
+        A seleção nacional da Guiné-Bissau.
+      </p>
+
     </div>
+
+
     <div class="favorite-box">
-      <span>🇬🇼</span><h3>Orgulho nacional</h3>
-      <p>Conhece os jogadores, convocatórias, equipa técnica e história da seleção nacional.</p>
+
+      <span>🇬🇼</span>
+
+      <h3>Orgulho nacional</h3>
+
+      <p>
+        Conhece os jogadores, convocatórias, equipa técnica
+        e história da seleção nacional.
+      </p>
+
     </div>
-    <div class="section-block"><h2>Jogadores da seleção</h2><div id="djurtusPlayers" class="players-grid"></div></div>
+
+
+    <div class="section-block">
+
+      <h2>Jogadores da seleção</h2>
+
+      <div id="djurtusPlayers" class="players-grid"></div>
+
+    </div>
+
   </section>
 
+
+  <!-- PÁGINA DOS CLUBES -->
   <section id="page-clubs" class="page-view hidden">
+
     <div class="page-heading">
-      <p class="eyebrow">FUTEBOL NACIONAL</p><h1>Clubes</h1>
-      <p class="muted">Os clubes de futebol da Guiné-Bissau.</p>
+
+      <p class="eyebrow">FUTEBOL NACIONAL</p>
+
+      <h1>Clubes</h1>
+
+      <p class="muted">
+        Os clubes de futebol da Guiné-Bissau.
+      </p>
+
     </div>
-    <input type="search" id="clubSearch" placeholder="Pesquisar clube...">
+
+
+    <input
+      type="search"
+      id="clubSearch"
+      placeholder="Pesquisar clube..."
+      autocomplete="off">
+
+
     <div id="clubsList" class="league-grid">
-      <div class="favorite-box"><span>🛡️</span><h3>Clubes guineenses</h3><p>Informações dos clubes nacionais serão adicionadas.</p></div>
+
+      <div class="favorite-box">
+
+        <span>🛡️</span>
+
+        <h3>Clubes guineenses</h3>
+
+        <p>
+          Informações dos clubes nacionais serão adicionadas.
+        </p>
+
+      </div>
+
     </div>
+
   </section>
 
+
+  <!-- PÁGINA DAS COMPETIÇÕES -->
   <section id="page-competitions" class="page-view hidden">
-    <div class="page-heading"><p class="eyebrow">FUTEBOL GUINEENSE</p><h1>Competições</h1></div>
+
+    <div class="page-heading">
+
+      <p class="eyebrow">FUTEBOL GUINEENSE</p>
+
+      <h1>Competições</h1>
+
+      <p class="muted">
+        Conhece as competições do futebol nacional.
+      </p>
+
+    </div>
+
+
     <div class="league-grid">
-      <div class="league-card"><b>🏆</b><strong>Campeonato Nacional</strong><small>Guiné-Bissau</small></div>
-      <div class="league-card"><b>🥇</b><strong>Taça Nacional</strong><small>Guiné-Bissau</small></div>
-      <div class="league-card"><b>⚽</b><strong>Outras competições</strong><small>Futebol nacional</small></div>
+
+      <div class="league-card">
+        <b>🏆</b>
+        <strong>Campeonato Nacional</strong>
+        <small>Guiné-Bissau</small>
+      </div>
+
+      <div class="league-card">
+        <b>🥇</b>
+        <strong>Taça Nacional</strong>
+        <small>Guiné-Bissau</small>
+      </div>
+
+      <div class="league-card">
+        <b>⚽</b>
+        <strong>Outras competições</strong>
+        <small>Futebol nacional</small>
+      </div>
+
     </div>
+
   </section>
 
+
+  <!-- PÁGINA DAS NOTÍCIAS -->
   <section id="page-news" class="page-view hidden">
-    <div class="page-heading"><p class="eyebrow">INFORMAÇÃO</p><h1>Notícias</h1><p class="muted">Tudo sobre o futebol da Guiné-Bissau.</p></div>
+
+    <div class="page-heading">
+
+      <p class="eyebrow">INFORMAÇÃO</p>
+
+      <h1>Notícias</h1>
+
+      <p class="muted">
+        Tudo sobre o futebol da Guiné-Bissau.
+      </p>
+
+    </div>
+
+
     <div id="newsList" class="news-list">
-      <div class="favorite-box"><span>📰</span><h3>Notícias em breve</h3><p>As notícias serão publicadas nesta secção.</p></div>
+
+      <div class="favorite-box">
+
+        <span>📰</span>
+
+        <h3>Notícias em breve</h3>
+
+        <p>
+          As notícias serão publicadas nesta secção.
+        </p>
+
+      </div>
+
     </div>
+
   </section>
 
+
+  <!-- PÁGINA SOBRE -->
   <section id="page-about" class="page-view hidden">
-    <div class="page-heading"><p class="eyebrow">A NOSSA IDENTIDADE</p><h1>Sobre o <span>MEDBI</span></h1></div>
-    <div class="favorite-box">
-      <span>🇬🇼</span><h3>MEDBI Football</h3>
-      <p>Uma plataforma dedicada à divulgação do futebol da Guiné-Bissau, dos seus clubes, competições e jogadores, incluindo os talentos guineenses que atuam no estrangeiro.</p>
-      <p><strong>Desenvolvido por MEDBI.</strong></p>
+
+    <div class="page-heading">
+
+      <p class="eyebrow">A NOSSA IDENTIDADE</p>
+
+      <h1>Sobre o <span>MEDBI</span></h1>
+
     </div>
+
+
+    <div class="favorite-box">
+
+      <span>🇬🇼</span>
+
+      <h3>MEDBI Football</h3>
+
+      <p>
+        Uma plataforma dedicada à divulgação do futebol da
+        Guiné-Bissau, dos seus clubes, competições e jogadores,
+        incluindo os talentos guineenses que atuam no estrangeiro.
+      </p>
+
+      <p>
+        <strong>Desenvolvido por MEDBI.</strong>
+      </p>
+
+    </div>
+
   </section>
 
+
+  <!-- NAVEGAÇÃO INFERIOR -->
   <nav class="bottom-nav" aria-label="Navegação principal">
-    <button class="nav-item active" data-page="home"><span>⌂</span><small>Início</small></button>
-    <button class="nav-item" data-page="players"><span>👤</span><small>Jogadores</small></button>
-    <button class="nav-item" data-page="djurtus"><span>🇬🇼</span><small>Djurtus</small></button>
-    <button class="nav-item" data-page="clubs"><span>🛡️</span><small>Clubes</small></button>
-    <button class="nav-item" data-page="news"><span>📰</span><small>Notícias</small></button>
+
+    <button class="nav-item active" data-page="home" type="button">
+      <span>⌂</span>
+      <small>Início</small>
+    </button>
+
+    <button class="nav-item" data-page="players" type="button">
+      <span>👤</span>
+      <small>Jogadores</small>
+    </button>
+
+    <button class="nav-item" data-page="djurtus" type="button">
+      <span>🇬🇼</span>
+      <small>Djurtus</small>
+    </button>
+
+    <button class="nav-item" data-page="clubs" type="button">
+      <span>🛡️</span>
+      <small>Clubes</small>
+    </button>
+
+    <button class="nav-item" data-page="news" type="button">
+      <span>📰</span>
+      <small>Notícias</small>
+    </button>
+
   </nav>
 
+
+  <!-- MENSAGENS -->
   <div class="toast" id="toast" role="status"></div>
+
 </div>
 
+
+<!-- FICHEIROS JAVASCRIPT -->
 <script src="js/players.js"></script>
 <script src="js/app.js"></script>
+
 </body>
-</html>
+  </html>
+  
