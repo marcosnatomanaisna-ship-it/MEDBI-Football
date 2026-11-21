@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080d14">
+  <meta name="description" content="MEDBI Football — resultados, jogos e competições de futebol.">
+  <title>MEDBI Football</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="MEDBI Football início">
+        <span class="brand-mark">M<span>F</span></span>
+        <span class="brand-copy"><strong>MEDBI</strong><small>FOOTBALL</small></span>
+      </a>
+      <div class="top-actions">
+        <span class="connection" id="connectionStatus"><i></i> Online</span>
+        <button class="icon-button" id="searchToggle" aria-label="Pesquisar" title="Pesquisar">⌕</button>
+        <button class="icon-button" id="refreshButton" aria-label="Atualizar" title="Atualizar">↻</button>
+      </div>
+    </header>
+
+    <main id="mainContent">
+      <section class="search-panel hidden" id="searchPanel">
+        <input id="searchInput" type="search" placeholder="Pesquisar equipa ou competição…" autocomplete="off">
+      </section>
+
+      <section class="welcome-row">
+        <div>
+          <p class="eyebrow" id="todayLabel">FUTEBOL MUNDIAL</p>
+          <h1>O mundo <span>do futebol.</span></h1>
+          <p class="muted">Todos os jogos. Num só lugar.</p>
+        </div>
+        <div class="hero-ball" aria-hidden="true"><span>⚽</span><small>LIVE</small></div>
+      </section>
+
+      <nav class="filter-tabs" aria-label="Filtro de jogos">
+        <button class="filter-tab active" data-filter="all">Todos</button>
+        <button class="filter-tab" data-filter="live">Ao vivo</button>
+        <button class="filter-tab" data-filter="finished">Terminados</button>
+        <button class="filter-tab" data-filter="scheduled">Próximos</button>
+      </nav>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <div><p class="eyebrow">EM CAMPO</p><h2>Jogos</h2></div>
+          <span class="update-label" id="lastUpdated">A aguardar dados</span>
+        </div>
+        <div id="matchList" class="match-list">
+          <div class="loading-card"><span class="spinner"></span><p>A carregar jogos…</p></div>
+        </div>
+        <p class="data-note" id="dataNote">Os resultados reais aparecerão quando a ligação à API estiver configurada.</p>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <div><p class="eyebrow">DESCOBRE</p><h2>Competições</h2></div>
+          <button class="text-button" data-go="leagues">Ver todas</button>
+        </div>
+        <div class="competition-strip" id="popularCompetitions">
+          <button class="competition-chip" data-league="39"><span class="competition-ball">⚽</span><span>Premier League</span></button>
+          <button class="competition-chip" data-league="2"><span class="competition-ball">🏆</span><span>Champions League</span></button>
+          <button class="competition-chip" data-league="140"><span class="competition-ball">⚽</span><span>La Liga</span></button>
+          <button class="competition-chip" data-league="13"><span class="competition-ball">🌍</span><span>CAF / África</span></button>
+        </div>
+      </section>
+    </main>
+
+    <section id="page-live" class="page-view hidden">
+      <div class="page-heading"><p class="eyebrow">AGORA</p><h1>Ao vivo <span>●</span></h1></div>
+      <div id="liveList" class="match-list empty-state">A carregar jogos ao vivo…</div>
+    </section>
+
+    <section id="page-matches" class="page-view hidden">
+      <div class="page-heading"><p class="eyebrow">AGENDA</p><h1>Jogos</h1></div>
+      <div class="date-control">
+        <button class="icon-button" id="previousDay" aria-label="Dia anterior">‹</button>
+        <input type="date" id="matchDate">
+        <button class="icon-button" id="nextDay" aria-label="Dia seguinte">›</button>
+      </div>
+      <div id="dateMatchList" class="match-list"></div>
+    </section>
+
+    <section id="page-leagues" class="page-view hidden">
+      <div class="page-heading"><p class="eyebrow">À TUA MANEIRA</p><h1>Competições</h1></div>
+      <div class="league-grid" id="leagueGrid">
+        <button class="league-card" data-league="2"><b>🏆</b><strong>UEFA Champions League</strong><small>Europa</small></button>
+        <button class="league-card" data-league="39"><b>🏴</b><strong>Premier League</strong><small>Inglaterra</small></button>
+        <button class="league-card" data-league="140"><b>🇪🇸</b><strong>La Liga</strong><small>Espanha</small></button>
+        <button class="league-card" data-league="135"><b>🇮🇹</b><strong>Serie A</strong><small>Itália</small></button>
+        <button class="league-card" data-league="78"><b>🇩🇪</b><strong>Bundesliga</strong><small>Alemanha</small></button>
+        <button class="league-card" data-league="61"><b>🇫🇷</b><strong>Ligue 1</strong><small>França</small></button>
+        <button class="league-card" data-league="94"><b>🇵🇹</b><strong>Primeira Liga</strong><small>Portugal</small></button>
+        <button class="league-card" data-league="Africa"><b>🌍</b><strong>Futebol africano</strong><small>África</small></button>
+        <button class="league-card" data-league="Guinea-Bissau"><b>🇬🇼</b><strong>Guiné-Bissau</strong><small>Seleção e competições</small></button>
+      </div>
+    </section>
+
+    <section id="page-favorites" class="page-view hidden">
+      <div class="page-heading"><p class="eyebrow">GUARDADOS</p><h1>Favoritos</h1></div>
+      <div class="favorite-box"><span>☆</span><h3>Os teus favoritos</h3><p>Em breve poderás guardar equipas e competições e encontrá-las aqui.</p></div>
+    </section>
+
+    <section id="page-profile" class="page-view hidden">
+      <div class="page-heading"><p class="eyebrow">MEDBI FOOTBALL</p><h1>Perfil</h1></div>
+      <div class="settings-card">
+        <div class="setting-row"><span>Atualização automática</span><strong>30 segundos</strong></div>
+        <div class="setting-row"><span>Ligação à Internet</span><strong>Necessária</strong></div>
+        <div class="setting-row"><span>Versão</span><strong>1.0.0</strong></div>
+        <div class="setting-row"><span>Desenvolvido por</span><strong>MEDBI</strong></div>
+      </div>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button class="nav-item active" data-page="home"><span>⌂</span><small>Início</small></button>
+      <button class="nav-item" data-page="live"><span class="nav-live-icon">●</span><small>Live</small></button>
+      <button class="nav-item" data-page="matches"><span>▦</span><small>Jogos</small></button>
+      <button class="nav-item" data-page="leagues"><span>🏆</span><small>Ligas</small></button>
+      <button class="nav-item" data-page="profile"><span>◉</span><small>Perfil</small></button>
+    </nav>
+    <div class="toast" id="toast" role="status"></div>
+  </div>
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/matches.js"></script>
+  <script src="js/leagues.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

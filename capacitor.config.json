@@ -1,0 +1,9 @@
+{
+  "appId": "com.medbi.football",
+  "appName": "MEDBI Football",
+  "webDir": ".",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}

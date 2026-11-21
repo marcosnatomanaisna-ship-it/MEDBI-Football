@@ -1,0 +1,13 @@
+{
+  "name": "MEDBI Football",
+  "short_name": "MEDBI Football",
+  "description": "Resultados e informação de futebol mundial.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#080d14",
+  "theme_color": "#080d14",
+  "orientation": "portrait",
+  "icons": [
+    {"src":"assets/icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
