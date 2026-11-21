@@ -1,0 +1,8 @@
+
+window.MEDBI_CONFIG = {
+  APP_NAME: "MEDBI Football",
+  VERSION: "2.0.0",
+  REFRESH_INTERVAL_MS: 30000,
+  API_BASE_URL: "",
+  DEMO_MODE: true
+};
