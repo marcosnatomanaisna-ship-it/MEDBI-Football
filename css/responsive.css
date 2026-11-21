@@ -1,0 +1,24 @@
+
+@media (max-width: 420px) {
+  .app-shell { padding-left: 14px; padding-right: 14px; }
+  h1 { font-size: 26px; }
+  .welcome-row { min-height: 155px; padding: 19px 15px; }
+  .hero-ball { width: 68px; height: 68px; flex-basis: 68px; }
+  .hero-ball span { font-size: 36px; }
+  .match-card { padding: 12px; }
+  .match-teams { grid-template-columns: 1fr 54px 1fr; gap: 5px; }
+  .team { gap: 6px; }
+  .team-logo { width: 31px; height: 31px; flex-basis: 31px; }
+  .team-name { font-size: 10px; }
+  .score { font-size: 19px; }
+  .league-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .nav-item small { font-size: 8px; }
+}
+
+@media (min-width: 600px) {
+  .app-shell { padding-left: 24px; padding-right: 24px; }
+  .match-card { padding: 19px; }
+  .team-logo { width: 43px; height: 43px; flex-basis: 43px; }
+  .team-name { font-size: 14px; }
+  .score { font-size: 26px; }
+}
