@@ -897,3 +897,157 @@ button {
 #page-competitions .league-card {
   cursor: default;
 }
+
+/* MENU HAMBURGUER MEDBI FOOTBALL */
+
+.top-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  width: min(300px, 85vw);
+  padding: 20px 16px;
+  background: #0d1723;
+  border-right: 1px solid #26384a;
+  transform: translateX(-105%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu.menu-open {
+  transform: translateX(0);
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #26384a;
+}
+
+.menu-header > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.menu-header strong {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.menu-header small,
+.menu-footer small {
+  color: #9aabba;
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.menu-country {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 12px;
+  margin: 18px 0;
+  background: #142536;
+  border-radius: 12px;
+  font-size: 25px;
+}
+
+.menu-country div {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-country strong {
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.menu-country small {
+  color: #9aabba;
+  font-size: 11px;
+}
+
+.side-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.side-menu-links button {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  color: #dce6ef;
+  background: transparent;
+  border: 0;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.side-menu-links button span {
+  font-size: 14px;
+}
+
+.side-menu-links button:active,
+.side-menu-links button:hover {
+  background: #1b3043;
+  color: var(--green);
+}
+
+.menu-divider {
+  height: 1px;
+  background: #26384a;
+  margin: 12px 0;
+}
+
+.menu-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: auto;
+  padding-top: 25px;
+  border-top: 1px solid #26384a;
+}
+
+.menu-footer strong {
+  color: var(--green);
+  font-size: 13px;
+}
+
+.back-button {
+  font-size: 25px;
+}
+
+@media (max-width: 600px) {
+  .top-left {
+    gap: 6px;
+  }
+
+  .side-menu {
+    width: 280px;
+  }
+}
