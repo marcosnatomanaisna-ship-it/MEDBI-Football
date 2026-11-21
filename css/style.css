@@ -763,3 +763,137 @@ button {
     transition-duration: .01ms !important;
   }
 }
+
+/* MEDBI FOOTBALL - FUTEBOL GUINEENSE */
+
+.players-search {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.players-search input,
+.players-search select,
+#clubSearch {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 15px;
+  color: #ffffff;
+  background: #111c29;
+  border: 1px solid #26384a;
+  border-radius: 12px;
+  font: inherit;
+  outline: none;
+}
+
+.players-search input:focus,
+.players-search select:focus,
+#clubSearch:focus {
+  border-color: var(--green);
+}
+
+.players-search select option {
+  background: #111c29;
+  color: #ffffff;
+}
+
+.player-tabs {
+  margin: 16px 0;
+  overflow-x: auto;
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.player-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #111c29;
+  border: 1px solid #26384a;
+  border-radius: 15px;
+}
+
+.player-avatar {
+  height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #182b3c, #0c1722);
+  font-size: 42px;
+  overflow: hidden;
+}
+
+.player-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.player-info {
+  padding: 12px;
+}
+
+.player-info h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.player-info p {
+  margin: 5px 0;
+  color: #aab8c7;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.player-info small {
+  display: block;
+  margin-top: 8px;
+  color: #c7d3df;
+  font-size: 11px;
+}
+
+.player-info .player-national {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.news-list {
+  display: grid;
+  gap: 14px;
+}
+
+.news-card {
+  padding: 16px;
+  background: #111c29;
+  border: 1px solid #26384a;
+  border-radius: 14px;
+}
+
+.news-card h3 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.news-card p {
+  color: #aab8c7;
+  line-height: 1.5;
+}
+
+.page-heading .muted {
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+#clubSearch {
+  margin: 18px 0;
+}
+
+#page-competitions .league-card {
+  cursor: default;
+}
